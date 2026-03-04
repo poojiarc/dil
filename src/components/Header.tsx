@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home, Info, Briefcase, Calendar, Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoPng from "@/assets/logo.png";
+import logoFull from "@/assets/logo-full.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
