@@ -12,10 +12,33 @@ const Volunteer = () => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setShowSuccess(true);
-    setForm({ name: "", phone: "", email: "", interest: "", availability: "", message: "" });
-  };
+  e.preventDefault();
+
+  const message = `
+Volunteer Application - Dil Vasa Foundation
+
+Full Name: ${form.name}
+Phone: ${form.phone}
+Email: ${form.email}
+Area of Interest: ${form.interest}
+Availability: ${form.availability}
+Message: ${form.message}
+  `;
+
+  const whatsappUrl = `https://wa.me/918520835457?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappUrl, "_blank");
+
+  // Optional: reset form after redirect
+  setForm({
+    name: "",
+    phone: "",
+    email: "",
+    interest: "",
+    availability: "",
+    message: "",
+  });
+};
 
   return (
     <div>

@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 right-0 z-50 transition-all duration-500 md:top-[42px] top-0 ${
+      className={`fixed left-0 right-0 z-50 transition-all duration-500 top-0 ${
         scrolled
           ? "bg-primary shadow-lg py-2 !top-0"
           : "bg-primary/80 backdrop-blur-sm py-3"
@@ -38,8 +38,27 @@ const Header = () => {
     >
       <div className="container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logoFull} alt="DilVasa Foundation Logo" className="h-14 w-auto rounded bg-white/90 p-1" />
-        </Link>
+  <img
+    src={logoFull}
+    alt="DilVasa Foundation Logo"
+    className="h-14 w-auto rounded bg-white/90 p-1"
+  />
+
+  <div className="hidden sm:block leading-tight">
+    <h1
+      className="text-xl font-bold text-primary-foreground drop-shadow-md"
+  style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "1px" }}
+    >
+      Dil Vasa
+    </h1>
+    <p
+      className="text-xl font-bold text-primary-foreground drop-shadow-md"
+  style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "1px" }}
+    >
+      Foundation
+    </p>
+  </div>
+</Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
