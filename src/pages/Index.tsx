@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { BookOpen, HeartPulse, Wrench, Users, ArrowRight, Phone, Mail, MapPin, Facebook, Instagram, Calendar } from "lucide-react";
+import { BookOpen, HeartPulse, Wrench, Users, ArrowRight, Calendar } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import Counter from "@/components/Counter";
-import heroBg from "@/assets/hero-bg.jpg";
+import HeroCarousel from "@/components/HeroCarousel";
 import aboutPreview from "@/assets/about-preview.jpg";
 import event1 from "@/assets/event1.jpg";
 import event2 from "@/assets/event2.jpg";
 import event3 from "@/assets/event3.jpg";
-import { motion } from "framer-motion";
 
 const services = [
   {
@@ -42,52 +41,8 @@ const events = [
 const Index = () => {
   return (
     <div>
-      {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
-        <div className="absolute inset-0 gradient-blue-overlay" />
-        <div className="relative z-10 container-custom text-center text-primary-foreground py-32">
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight mb-6"
-          >
-            Empowering Communities.
-            <br />
-            Transforming Lives.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="max-w-2xl mx-auto text-lg md:text-xl text-primary-foreground/85 mb-10 leading-relaxed"
-          >
-            DilVasa Foundation is dedicated to uplifting underserved communities through education, healthcare, skill development, and sustainable welfare initiatives.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <Link to="/volunteer">
-              <Button variant="cta" size="lg" className="text-base px-8 py-6">
-                Join as Volunteer
-              </Button>
-            </Link>
-            <a href="#">
-              <Button variant="hero-outline" size="lg" className="text-base px-8 py-6">
-                Donate Now
-              </Button>
-            </a>
-          </motion.div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
-      </section>
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
       {/* About Preview */}
       <section className="section-padding">
@@ -198,44 +153,6 @@ const Index = () => {
                 View All Events <ArrowRight size={16} />
               </Button>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Strip */}
-      <section className="py-12 bg-primary">
-        <div className="container-custom">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-primary-foreground">
-            <div className="flex flex-col sm:flex-row items-center gap-6">
-              <div className="flex items-center gap-2">
-                <Phone size={18} />
-                <span className="text-sm">+91 85208 35457</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail size={18} />
-                <span className="text-sm">dilvasafoundation@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin size={18} />
-                <span className="text-sm">Munagala, Suryapet – 508233</span>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center hover:bg-primary-foreground/10 hover:shadow-[0_0_15px_hsl(213_76%_50%/0.4)] transition-all duration-300"
-                aria-label="Facebook"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center hover:bg-primary-foreground/10 hover:shadow-[0_0_15px_hsl(213_76%_50%/0.4)] transition-all duration-300"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} />
-              </a>
-            </div>
           </div>
         </div>
       </section>
