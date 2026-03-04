@@ -44,7 +44,7 @@ const Header = () => {
     className="h-14 w-auto rounded bg-white/90 p-1"
   />
 
-  <div className="hidden sm:block leading-tight">
+  <div className="leading-tight">
     <h1
       className="text-xl font-bold text-primary-foreground drop-shadow-md"
   style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "1px" }}
