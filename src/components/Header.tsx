@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Home, Info, Briefcase, Calendar, Phone, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoPng from "@/assets/logo.png";
+import logoFull from "@/assets/logo-full.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -30,15 +30,15 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed left-0 right-0 z-50 transition-all duration-500 md:top-[42px] top-0 ${
         scrolled
-          ? "bg-primary shadow-lg py-2"
-          : "bg-transparent py-4"
+          ? "bg-primary shadow-lg py-2 !top-0"
+          : "bg-primary/80 backdrop-blur-sm py-3"
       }`}
     >
       <div className="container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logoPng} alt="DilVasa Foundation Logo" className="h-12 w-auto" />
+          <img src={logoFull} alt="DilVasa Foundation Logo" className="h-14 w-auto rounded bg-white/90 p-1" />
         </Link>
 
         {/* Desktop Nav */}
