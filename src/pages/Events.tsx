@@ -8,6 +8,7 @@ import education from "@/assets/education.jpg";
 import skills from "@/assets/skills.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const events = [
   {
@@ -43,6 +44,7 @@ const events = [
 ];
 
 const Events = () => {
+  const navigate = useNavigate();
   return (
     <div>
       {/* Hero */}
@@ -84,9 +86,13 @@ const Events = () => {
                       <h3 className="text-2xl font-heading font-bold text-foreground mb-4">{event.title}</h3>
                       <p className="text-muted-foreground leading-relaxed mb-6">{event.desc}</p>
                       <div>
-                        <Button variant="default" className="gap-2">
-                          Register Now <ArrowRight size={16} />
-                        </Button>
+                        <Button
+  variant="default"
+  className="gap-2"
+  onClick={() => navigate("/volunteer")}
+>
+  Register Now <ArrowRight size={16} />
+</Button>
                       </div>
                     </div>
                   </div>
