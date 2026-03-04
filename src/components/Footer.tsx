@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Home, Info, Briefcase, Calendar, Phone, MapPin, Mail, Facebook, Instagram, Heart } from "lucide-react";
-import logoPng from "@/assets/logo.png";
+import logoFull from "@/assets/logo-full.jpg";
 
 const Footer = () => {
   return (
