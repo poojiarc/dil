@@ -6,6 +6,7 @@ import clothesDistribution from "@/assets/clothes-distribution.jpg";
 import templeInitiative from "@/assets/temple-initiative.jpg";
 import community from "@/assets/community.jpg";
 import { motion } from "framer-motion";
+import founder from "@/assets/founder.jpg";
 
 const achievements = [
   {
@@ -114,7 +115,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <ScrollReveal>
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img src={clothesDistribution} alt="Dileep Vasa - DVF Founder" className="w-full h-auto object-cover" loading="lazy" />
+                <img src={founder} alt="Dileep Vasa - DVF Founder" className="w-full h-auto object-cover" loading="lazy" />
               </div>
             </ScrollReveal>
             <ScrollReveal delay={200}>
@@ -224,14 +225,19 @@ const About = () => {
 
       {/* Community Image */}
       <section className="section-padding">
-        <div className="container-custom">
-          <ScrollReveal>
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src={templeInitiative} alt="Community welfare activities" className="w-full h-80 object-cover" loading="lazy" />
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+  <div className="container-custom">
+    <ScrollReveal>
+      <div className="rounded-2xl overflow-hidden shadow-lg">
+        <img
+          src={templeInitiative}
+          alt="Community welfare activities"
+          className="hidden w-full h-80 object-cover"
+          loading="lazy"
+        />
+      </div>
+    </ScrollReveal>
+  </div>
+</section>
     </div>
   );
 };

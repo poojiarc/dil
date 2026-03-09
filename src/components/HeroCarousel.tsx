@@ -10,21 +10,33 @@ const slides = [
   {
     image: heroSlide1,
     title: "Small Acts Of Kindness\nCreate A Big Impact\nOn People's Lives",
-    subtitle: "Empowering communities and changing lives through dedicated service and support. Join us in making a difference today.",
+    subtitle:
+      "Empowering communities and changing lives through dedicated service and support. Join us in making a difference today.",
+    quote:
+      "True success is not measured by what we achieve for ourselves, but by how many lives we uplift along the way.",
+    author: "Dileep Vasa",
     cta: "Explore Our Cause",
     link: "/about",
   },
   {
     image: heroSlide2,
     title: "Healthcare For All\nBringing Hope To\nEvery Doorstep",
-    subtitle: "Organizing health camps, medical awareness programs, and critical treatment assistance for underserved communities.",
+    subtitle:
+      "Organizing health camps, medical awareness programs, and critical treatment assistance for underserved communities.",
+    quote:
+      "Empower people. Serve communities. Build a legacy of positive change.",
+    author: "Dileep Vasa",
     cta: "Our Services",
     link: "/services",
   },
   {
     image: heroSlide3,
     title: "Empowering Youth\nBuilding Skills\nTransforming Futures",
-    subtitle: "Vocational training, career guidance, and entrepreneurship support programs creating lasting change.",
+    subtitle:
+      "Vocational training, career guidance, and entrepreneurship support programs creating lasting change.",
+    quote:
+      "Real change begins when compassion turns into action.",
+    author: "Dileep Vasa",
     cta: "Join As Volunteer",
     link: "/volunteer",
   },
@@ -65,12 +77,15 @@ const HeroCarousel = () => {
               </p>
 
               {/* Founder Quote */}
-              <div className="mb-8 border-l-4 border-accent pl-4 py-2">
-                <p className="text-foreground/80 italic text-sm md:text-base leading-relaxed font-body">
-                  "True success is not measured by what we achieve for ourselves, but by how many lives we uplift along the way."
-                </p>
-                <p className="text-accent font-semibold text-sm mt-2">— Dileep Vasa</p>
-              </div>
+              {/* Quote */}
+<div className="mb-8 border-l-4 border-accent pl-4 py-2">
+  <p className="text-foreground/80 italic text-sm md:text-base leading-relaxed font-body">
+    "{slide.quote}"
+  </p>
+  <p className="text-accent font-semibold text-sm mt-2">
+    — {slide.author}
+  </p>
+</div>
 
               <Link to={slide.link}>
                 <Button variant="cta" size="lg" className="text-base px-8 py-6 rounded-full">
