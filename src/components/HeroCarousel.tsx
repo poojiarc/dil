@@ -23,7 +23,7 @@ const slides = [
   },
   {
     image: heroSlide3,
-    title: "Empowering Women\nBuilding Skills\nTransforming Futures",
+    title: "Empowering Youth\nBuilding Skills\nTransforming Futures",
     subtitle: "Vocational training, career guidance, and entrepreneurship support programs creating lasting change.",
     cta: "Join As Volunteer",
     link: "/volunteer",
@@ -60,9 +60,18 @@ const HeroCarousel = () => {
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-tight mb-6 whitespace-pre-line">
                 {slide.title}
               </h1>
-              <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-8 max-w-lg">
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-6 max-w-lg">
                 {slide.subtitle}
               </p>
+
+              {/* Founder Quote */}
+              <div className="mb-8 border-l-4 border-accent pl-4 py-2">
+                <p className="text-foreground/80 italic text-sm md:text-base leading-relaxed font-body">
+                  "True success is not measured by what we achieve for ourselves, but by how many lives we uplift along the way."
+                </p>
+                <p className="text-accent font-semibold text-sm mt-2">— Dileep Vasa</p>
+              </div>
+
               <Link to={slide.link}>
                 <Button variant="cta" size="lg" className="text-base px-8 py-6 rounded-full">
                   {slide.cta}

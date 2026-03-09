@@ -1,45 +1,59 @@
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight, Droplets, Stethoscope, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
-import event1 from "@/assets/event1.jpg";
-import event2 from "@/assets/event2.jpg";
-import event3 from "@/assets/event3.jpg";
-import education from "@/assets/education.jpg";
-import skills from "@/assets/skills.jpg";
+import clothesDistribution from "@/assets/clothes-distribution.jpg";
+import templeInitiative from "@/assets/temple-initiative-2.jpg";
+import youthTshirts from "@/assets/youth-tshirts.jpg";
+import kabaddiTournament from "@/assets/kabaddi-tournament.jpg";
+import clothesDistribution2 from "@/assets/clothes-distribution-2.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const events = [
+const completedEvents = [
   {
-    img: event1,
-    title: "Education Scholarship Drive",
-    date: "June 15, 2026",
-    desc: "Our annual scholarship distribution event aims to recognize and support meritorious students from economically underprivileged backgrounds. This year's drive will distribute scholarships to 100+ students across Suryapet district, covering tuition fees, books, and digital learning tools.",
+    img: clothesDistribution,
+    title: "Clothes & Fruits Distribution to Gram Panchayat Staff",
+    desc: "Distributed clothes and fruits to the Gram Panchayat staff to honor their contribution to village development.",
   },
   {
-    img: event2,
-    title: "Mega Health Camp",
-    date: "August 10, 2026",
-    desc: "A comprehensive free health camp featuring specialist doctors in cardiology, orthopedics, ophthalmology, and general medicine. Free diagnostic tests, medicine distribution, and health awareness sessions for over 500 rural residents.",
+    img: templeInitiative,
+    title: "Sacred Photo Cards & Devotional Booklets Distribution",
+    desc: "Printed and distributed 1,000 sacred photo cards and devotional booklets including Lingashtakam and Hanuman Chalisa.",
   },
   {
-    img: event3,
-    title: "Youth Skill Workshop",
-    date: "September 5, 2026",
-    desc: "A hands-on workshop designed to equip young people with essential digital skills, communication training, and career readiness. Industry experts will conduct sessions on resume building, interview preparation, and freelancing opportunities.",
+    img: youthTshirts,
+    title: "T-Shirt Distribution to Rudra Youth",
+    desc: "Distributed T-shirts to Rudra Youth, promoting unity, leadership, and team spirit among young community members.",
   },
   {
-    img: skills,
-    title: "Women Empowerment Program",
-    date: "November 12, 2026",
-    desc: "A dedicated training program for women focusing on financial literacy, entrepreneurship basics, tailoring, and self-help group formation. This program aims to create 50 new women-led micro-enterprises in Munagala and surrounding villages.",
+    img: kabaddiTournament,
+    title: "State-Level Kabaddi Tournament Support",
+    desc: "Supported the State-Level Kabaddi Tournament organized by Ganee Youth to promote traditional sports and rural talent.",
+  },
+];
+
+const upcomingEvents = [
+  {
+    img: clothesDistribution2,
+    icon: Droplets,
+    title: "Chalivendram – Free Drinking Water Distribution",
+    date: "Summer 2026",
+    desc: "Providing drinking water to travelers and villagers during the summer season to help them cope with extreme heat.",
   },
   {
-    img: education,
-    title: "Community Food Distribution",
-    date: "January 14, 2027",
-    desc: "On the occasion of Sankranti, DilVasa Foundation will organize a large-scale food distribution drive providing nutritious meals and essential supplies to 1000+ families in underserved communities across Suryapet district.",
+    img: clothesDistribution,
+    icon: Stethoscope,
+    title: "Medical Camps in Villages",
+    date: "2026",
+    desc: "Organizing free health check-up camps with doctors to provide basic healthcare services and medical awareness to rural communities.",
+  },
+  {
+    img: templeInitiative,
+    icon: GraduationCap,
+    title: "Scholarships for Merit Students",
+    date: "2026",
+    desc: "Supporting talented and deserving students by providing scholarships to encourage education and help them achieve their academic goals.",
   },
 ];
 
@@ -58,47 +72,93 @@ const Events = () => {
           className="relative z-10 text-center text-primary-foreground"
         >
           <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4">Our Events</h1>
-          <p className="text-lg text-primary-foreground/80">Upcoming initiatives and community programs</p>
+          <p className="text-lg text-primary-foreground/80">Past achievements and upcoming initiatives</p>
         </motion.div>
       </section>
 
-      {/* Events List */}
+      {/* Completed Events - No dates */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid gap-8">
-            {events.map((event, i) => (
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="text-sm font-semibold text-accent uppercase tracking-widest">Completed</span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">Past Events</h2>
+            </div>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-2 gap-8">
+            {completedEvents.map((event, i) => (
               <ScrollReveal key={event.title} delay={i * 100}>
-                <div className="card-premium overflow-hidden group">
-                  <div className="grid md:grid-cols-[350px_1fr] gap-0">
-                    <div className="relative overflow-hidden">
-                      <img
-                        src={event.img}
-                        alt={event.title}
-                        className="w-full h-64 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                      <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2">
-                        <Calendar size={14} />
-                        {event.date}
-                      </div>
-                    </div>
-                    <div className="p-8 flex flex-col justify-center">
-                      <h3 className="text-2xl font-heading font-bold text-foreground mb-4">{event.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed mb-6">{event.desc}</p>
-                      <div>
-                        <Button
-  variant="default"
-  className="gap-2"
-  onClick={() => navigate("/volunteer")}
->
-  Register Now <ArrowRight size={16} />
-</Button>
-                      </div>
-                    </div>
+                <div className="card-premium overflow-hidden group h-full">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={event.img}
+                      alt={event.title}
+                      className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-heading font-bold text-foreground mb-2">{event.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{event.desc}</p>
                   </div>
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Upcoming Events - With dates */}
+      <section className="section-padding bg-secondary/30">
+        <div className="container-custom">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="text-sm font-semibold text-accent uppercase tracking-widest">Coming Soon</span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">Future Initiatives & Planned Programs – 2026</h2>
+            </div>
+          </ScrollReveal>
+          <div className="grid gap-8">
+            {upcomingEvents.map((event, i) => {
+              const Icon = event.icon;
+              return (
+                <ScrollReveal key={event.title} delay={i * 100}>
+                  <div className="card-premium overflow-hidden group">
+                    <div className="grid md:grid-cols-[350px_1fr] gap-0">
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={event.img}
+                          alt={event.title}
+                          className="w-full h-64 md:h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                        <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-2">
+                          <Calendar size={14} />
+                          {event.date}
+                        </div>
+                      </div>
+                      <div className="p-8 flex flex-col justify-center">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center">
+                            <Icon size={20} className="text-primary" />
+                          </div>
+                          <h3 className="text-2xl font-heading font-bold text-foreground">{event.title}</h3>
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed mb-6">{event.desc}</p>
+                        <div>
+                          <Button
+                            variant="default"
+                            className="gap-2"
+                            onClick={() => navigate("/volunteer")}
+                          >
+                            Register Now <ArrowRight size={16} />
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>

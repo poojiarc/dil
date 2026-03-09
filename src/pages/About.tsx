@@ -1,16 +1,40 @@
-import { Eye, Target, User, CheckCircle } from "lucide-react";
+import { Eye, Target, User, CheckCircle, Award, Users, Heart, Briefcase } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import Counter from "@/components/Counter";
 import aboutHero from "@/assets/about-hero.jpg";
-import aboutPreview from "@/assets/about-preview.jpg";
+import clothesDistribution from "@/assets/clothes-distribution.jpg";
+import templeInitiative from "@/assets/temple-initiative.jpg";
 import community from "@/assets/community.jpg";
 import { motion } from "framer-motion";
 
-const timeline = [
-  { year: "2023", title: "Foundation Established", desc: "DilVasa Foundation was officially registered with a mission to serve rural communities." },
-  { year: "2024", title: "First Health Camp", desc: "Organized the first mega health camp in Munagala, serving over 500 individuals." },
-  { year: "2025", title: "Education Initiative Launch", desc: "Launched the scholarship program supporting 200+ students across Telangana." },
-  { year: "2026", title: "Expanding Horizons", desc: "Scaling operations to 15+ villages with focus on skill development and women empowerment." },
+const achievements = [
+  {
+    icon: Briefcase,
+    title: "Professional Achievements",
+    items: [
+      "Founder & CEO of CUBEXIT Inc., a US-based IT staffing and consulting company",
+      "Built a growing network connecting technology professionals with global opportunities",
+      "Entrepreneur and investor with interests in real estate and community development",
+    ],
+  },
+  {
+    icon: Users,
+    title: "Community Leadership",
+    items: [
+      "Board Director – Telangana American Telugu Association (TTA)",
+      "Organizer of Bathukamma, Bonalu, Holi, and Ganesh Chaturthi celebrations in the United States",
+      "Active supporter of food drives, blood donation camps, and charity initiatives",
+    ],
+  },
+  {
+    icon: Heart,
+    title: "Philanthropy",
+    items: [
+      "Founder of DilVasa Foundation",
+      "Supporting youth empowerment, education, sports, and village development",
+      "Promoting social service and community welfare initiatives",
+    ],
+  },
 ];
 
 const About = () => {
@@ -42,7 +66,7 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-heading font-bold text-foreground mb-4">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To build a compassionate and self-reliant society by ensuring access to quality education, healthcare, and opportunities for sustainable development. We envision a world where every individual, regardless of their background, has the opportunity to thrive and contribute meaningfully to society.
+                  To build a compassionate and empowered society where education, opportunity, and community support help individuals achieve their full potential.
                 </p>
               </div>
             </ScrollReveal>
@@ -52,8 +76,25 @@ const About = () => {
                   <Target size={28} className="text-primary" />
                 </div>
                 <h3 className="text-2xl font-heading font-bold text-foreground mb-4">Our Mission</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  To implement transparent, scalable, and impactful welfare initiatives that empower individuals and uplift communities. Through structured programs in education, healthcare, skill development, and community welfare, we aim to create lasting positive change at the grassroots level.
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  The mission of the DilVasa Foundation is to support meaningful initiatives that strengthen communities and empower individuals through:
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    "Education support and student development",
+                    "Youth empowerment and leadership programs",
+                    "Promotion of sports and cultural activities",
+                    "Community welfare and social service initiatives",
+                    "Rural and village development programs",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <CheckCircle size={14} className="text-primary mt-0.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-muted-foreground leading-relaxed mt-4 text-sm">
+                  Through collaboration, compassion, and service, the foundation strives to create lasting positive impact in society.
                 </p>
               </div>
             </ScrollReveal>
@@ -64,63 +105,92 @@ const About = () => {
       {/* Founder */}
       <section className="section-padding bg-secondary/30">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="text-sm font-semibold text-accent uppercase tracking-widest">Leadership</span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">Founder – Dileep Vasa</h2>
+            </div>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <ScrollReveal>
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img src={aboutPreview} alt="Foundation community work" className="w-full h-auto object-cover" loading="lazy" />
+                <img src={clothesDistribution} alt="Dileep Vasa - DVF Founder" className="w-full h-auto object-cover" loading="lazy" />
               </div>
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <div className="flex items-center gap-3 mb-4">
-                <User size={24} className="text-primary" />
-                <span className="text-sm font-semibold text-accent uppercase tracking-widest">Founder</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">Dileep Vasa</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Dileep Vasa, drawing from over a decade in IT leadership and non-profit engagement including TTA (USA), established DVF to bring structured and organized welfare systems to rural communities. His experience spans across technology management, community building, and social impact initiatives.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                With a deep understanding of both the challenges faced by underserved communities and the power of organized philanthropy, Dileep founded DilVasa Foundation to bridge the gap between opportunity and access, starting from his hometown of Munagala.
-              </p>
-              <div className="flex flex-col gap-3">
-                {["10+ years IT & Non-Profit experience", "TTA (USA) active contributor", "Structured welfare management approach"].map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-foreground">
-                    <CheckCircle size={16} className="text-primary shrink-0" />
-                    <span className="text-sm">{item}</span>
-                  </div>
-                ))}
+              <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Dileep Vasa is an entrepreneur, real estate investor, and community leader dedicated to empowering communities through service and leadership.
+                </p>
+                <p>
+                  Originally from Munagala village in Suryapet district, Telangana, Dileep pursued his professional journey in the United States while staying deeply connected to his roots and community values.
+                </p>
+                <p>
+                  He is the Founder and CEO of <strong className="text-foreground">CUBEXIT Inc.</strong>, an IT staffing and consulting company based in the United States. Through his entrepreneurial vision and commitment to excellence, he has built a successful organization that creates career opportunities for technology professionals and supports businesses with innovative talent solutions.
+                </p>
+                <p>
+                  Beyond business, Dileep is widely recognized for his commitment to community service. He currently serves as a <strong className="text-foreground">Board Director of Telangana American Telugu Association (TTA)</strong>, one of the leading Telugu organizations in the United States that promotes Telangana culture, community unity, and charitable activities.
+                </p>
+                <p>
+                  In the state of Florida, he has actively organized and supported several large cultural and community programs including Bathukamma celebrations, Bonalu festivals, Holi events, and Ganesh Chaturthi, bringing together hundreds of families from the Telugu diaspora.
+                </p>
+                <p>
+                  He has also participated in various social initiatives such as food drives, blood donation camps, and community support programs.
+                </p>
               </div>
             </ScrollReveal>
           </div>
+
+          {/* Foundation Focus */}
+          <ScrollReveal>
+            <div className="mt-12 card-premium p-8">
+              <h3 className="text-xl font-heading font-bold text-foreground mb-4">
+                Driven by a passion for giving back to society, Dileep founded the DilVasa Foundation focusing on:
+              </h3>
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {["Youth Empowerment", "Education Support", "Sports Development", "Community Welfare", "Rural & Village Development"].map((focus) => (
+                  <div key={focus} className="flex items-center gap-2 text-foreground bg-secondary/50 px-4 py-3 rounded-xl">
+                    <CheckCircle size={16} className="text-primary shrink-0" />
+                    <span className="text-sm font-medium">{focus}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Achievements & Milestones */}
       <section className="section-padding">
         <div className="container-custom">
           <ScrollReveal>
             <div className="text-center mb-14">
-              <span className="text-sm font-semibold text-accent uppercase tracking-widest">Our Journey</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">Milestones</h2>
+              <span className="text-sm font-semibold text-accent uppercase tracking-widest">Recognition</span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mt-2">Achievements & Milestones</h2>
             </div>
           </ScrollReveal>
-          <div className="max-w-3xl mx-auto">
-            {timeline.map((item, i) => (
-              <ScrollReveal key={item.year} delay={i * 150}>
-                <div className="flex gap-6 mb-10 last:mb-0">
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold shrink-0">
-                      {item.year}
+          <div className="grid md:grid-cols-3 gap-8">
+            {achievements.map((ach, i) => {
+              const Icon = ach.icon;
+              return (
+                <ScrollReveal key={ach.title} delay={i * 150}>
+                  <div className="card-premium p-8 h-full">
+                    <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center mb-5">
+                      <Icon size={28} className="text-primary" />
                     </div>
-                    {i < timeline.length - 1 && <div className="w-0.5 flex-1 bg-border mt-2" />}
+                    <h3 className="text-xl font-heading font-bold text-foreground mb-4">{ach.title}</h3>
+                    <ul className="space-y-3">
+                      {ach.items.map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-muted-foreground text-sm">
+                          <CheckCircle size={14} className="text-primary mt-0.5 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="pb-2">
-                    <h4 className="text-lg font-heading font-bold text-foreground mb-1">{item.title}</h4>
-                    <p className="text-muted-foreground text-sm">{item.desc}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -152,12 +222,12 @@ const About = () => {
         </div>
       </section>
 
-      {/* Image Section */}
+      {/* Community Image */}
       <section className="section-padding">
         <div className="container-custom">
           <ScrollReveal>
             <div className="rounded-2xl overflow-hidden shadow-lg">
-              <img src={community} alt="Community welfare activities" className="w-full h-80 object-cover" loading="lazy" />
+              <img src={templeInitiative} alt="Community welfare activities" className="w-full h-80 object-cover" loading="lazy" />
             </div>
           </ScrollReveal>
         </div>

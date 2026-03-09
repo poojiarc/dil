@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Home, Info, Briefcase, Calendar, Phone, MapPin, Mail, Facebook, Instagram, Heart } from "lucide-react";
+import { Home, Info, Briefcase, Calendar, Phone, MapPin, Mail, Facebook, Instagram, Heart, Youtube } from "lucide-react";
 import logoFull from "@/assets/logo-full.jpg";
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo & About */}
           <div>
-            <img src={logoFull} alt="DilVasa Foundation" className="h-20 w-auto mb-4 rounded bg-white/90 p-1.5" />
+            <img src={logoFull} alt="DilVasa Foundation" className="h-24 w-auto mb-4 rounded bg-white/90 p-2" />
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Empowering the Needy. Transforming Lives. DilVasa Foundation is committed to creating a better tomorrow through education, healthcare, and community welfare.
             </p>
@@ -66,18 +66,31 @@ const Footer = () => {
             <h4 className="text-lg font-heading font-bold mb-4">Follow Us</h4>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/share/18KzMCQqk9/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center hover:bg-primary-foreground/10 hover:shadow-[0_0_15px_hsl(213_76%_50%/0.4)] transition-all duration-300"
                 aria-label="Facebook"
               >
                 <Facebook size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/dilvasafoundation?igsh=NXFqcXY3eXJwM2N6&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center hover:bg-primary-foreground/10 hover:shadow-[0_0_15px_hsl(213_76%_50%/0.4)] transition-all duration-300"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
+              </a>
+              <a
+                href="https://youtube.com/@dilvasafoundation?si=EJQFQT4yYazfYUzY"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-primary-foreground/30 flex items-center justify-center hover:bg-primary-foreground/10 hover:shadow-[0_0_15px_hsl(213_76%_50%/0.4)] transition-all duration-300"
+                aria-label="YouTube"
+              >
+                <Youtube size={18} />
               </a>
             </div>
           </div>
