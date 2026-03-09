@@ -113,7 +113,7 @@ const Footer = () => {
           <p className="text-sm text-primary-foreground/70">
             Made with <Heart size={14} className="inline text-red-400 fill-red-400" /> by{" "}
             <a
-              href="https://staffarc.com"
+              href="https://staffarc.in"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-primary-foreground hover:underline"
