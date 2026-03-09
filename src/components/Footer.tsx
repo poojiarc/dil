@@ -9,7 +9,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo & About */}
           <div>
-            <img src={logoFull} alt="DilVasa Foundation" className="h-24 w-auto mb-4 rounded bg-white/90 p-2" />
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logoFull} alt="DilVasa Foundation" className="h-24 w-auto rounded bg-white/90 p-2" />
+              <div className="leading-tight">
+                <h3 className="text-xl font-bold text-primary-foreground" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "1px" }}>
+                  Dil Vasa
+                </h3>
+                <p className="text-xl font-bold text-primary-foreground" style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "1px" }}>
+                  Foundation
+                </p>
+              </div>
+            </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Empowering the Needy. Transforming Lives. DilVasa Foundation is committed to creating a better tomorrow through education, healthcare, and community welfare.
             </p>

@@ -5,7 +5,9 @@ import clothesDistribution from "@/assets/clothes-distribution.jpg";
 import templeInitiative from "@/assets/temple-initiative-2.jpg";
 import youthTshirts from "@/assets/youth-tshirts.jpg";
 import kabaddiTournament from "@/assets/kabaddi-tournament.jpg";
-import clothesDistribution2 from "@/assets/clothes-distribution-2.jpg";
+import chalivendram from "@/assets/chalivendram.jpg";
+import medicalCamp from "@/assets/medical-camp.jpg";
+import scholarships from "@/assets/scholarships.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -35,21 +37,21 @@ const completedEvents = [
 
 const upcomingEvents = [
   {
-    img: clothesDistribution2,
+    img: chalivendram,
     icon: Droplets,
     title: "Chalivendram – Free Drinking Water Distribution",
     date: "Summer 2026",
     desc: "Providing drinking water to travelers and villagers during the summer season to help them cope with extreme heat.",
   },
   {
-    img: clothesDistribution,
+    img: medicalCamp,
     icon: Stethoscope,
     title: "Medical Camps in Villages",
     date: "2026",
     desc: "Organizing free health check-up camps with doctors to provide basic healthcare services and medical awareness to rural communities.",
   },
   {
-    img: templeInitiative,
+    img: scholarships,
     icon: GraduationCap,
     title: "Scholarships for Merit Students",
     date: "2026",
@@ -76,7 +78,7 @@ const Events = () => {
         </motion.div>
       </section>
 
-      {/* Completed Events - No dates */}
+      {/* Completed Events */}
       <section className="section-padding">
         <div className="container-custom">
           <ScrollReveal>
@@ -108,7 +110,7 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Upcoming Events - With dates */}
+      {/* Upcoming Events */}
       <section className="section-padding bg-secondary/30">
         <div className="container-custom">
           <ScrollReveal>
