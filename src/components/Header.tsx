@@ -38,27 +38,12 @@ const Header = () => {
     >
       <div className="container-custom flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-  <img
-    src={logoFull}
-    alt="DilVasa Foundation Logo"
-    className="h-14 w-auto rounded bg-white/90 p-1"
-  />
-
-  <div className="leading-tight">
-    <h1
-      className="text-xl font-bold text-primary-foreground drop-shadow-md"
-  style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "1px" }}
-    >
-      Dil Vasa
-    </h1>
-    <p
-      className="text-xl font-bold text-primary-foreground drop-shadow-md"
-  style={{ fontFamily: "'Playfair Display', serif", letterSpacing: "1px" }}
-    >
-      Foundation
-    </p>
-  </div>
-</Link>
+          <img
+            src={logoFull}
+            alt="DilVasa Foundation Logo"
+            className="h-16 md:h-20 w-auto rounded bg-white/90 p-1.5"
+          />
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
